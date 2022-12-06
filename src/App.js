@@ -16,7 +16,19 @@ import Select from '@mui/material/Select';
 import SearchIcon from '@mui/icons-material/Search';
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
+import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
+import AvatarGroup from '@mui/material/AvatarGroup';
 
+const Image = styled('img')({
+  width: '100px',
+  height: '100px',
+  'border-radius': '8px',
+  'padding': '5px'
+});
 
 export default function MyApp() {
   const upperNavi = {
@@ -98,6 +110,10 @@ export default function MyApp() {
         </Select>
       </FormControl>
 
+      <Grid item xs>
+        <SkeletonChildrenDemo />
+      </Grid>
+
 
 
       <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, width: 400 }} showLabels>
@@ -115,10 +131,45 @@ export default function MyApp() {
         />
         <BottomNavigationAction label="Profile" icon={<PersonOutlineOutlinedIcon />} />
       </BottomNavigation>
+
     </div>
 
   );
 }
+
+function SkeletonChildrenDemo() {
+  return (
+    <div style={{ margin: '10px', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ margin: 1 }}>
+          <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+        </Box>
+        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Typography>Eve</Typography>
+          <AvatarGroup max={4}>
+            <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+            <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+          </AvatarGroup>
+        </Box>
+      </Box>
+      <div style={{ width:'350px', height:'1px', background:'#D4D4D5', margin:'0 auto' }}></div>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <Image
+          src="https://pi.tedcdn.com/r/talkstar-photos.s3.amazonaws.com/uploads/72bda89f-9bbf-4685-910a-2f151c4f3a8a/NicolaSturgeon_2019T-embed.jpg?w=512"
+          alt=""
+        />
+        <ul>
+          <li>Thai Market</li>
+          <li>Thai Market</li>
+          <li>Thai Market</li>
+        </ul>
+      </div>
+
+    </div>
+  );
+}
+
+
 
 const restaurants = [
   { title: 'Mexican', cursine: 'Taco Place' },
