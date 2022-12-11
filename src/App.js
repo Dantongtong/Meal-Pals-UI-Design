@@ -76,8 +76,8 @@ export default function MyApp() {
 
       <div style={{ 'padding-left': "10px" }}>
         <FormControl sx={{ m: 1, minWidth: 90 }}>
-          <InputLabel htmlFor="grouped-native-select">Cursine</InputLabel>
-          <Select native defaultValue="" id="grouped-native-select" label="Cursine">
+          <InputLabel htmlFor="grouped-native-select">cuisine</InputLabel>
+          <Select native defaultValue="" id="grouped-native-select" label="cuisine">
             <option aria-label="None" value="" />
             <optgroup label="Japanese">
               <option value={1}>Sushi</option>
@@ -187,7 +187,7 @@ function SkeletonChildrenDemo() {
 
 
 const restaurants = [
-  { title: 'Mexican', cursine: 'Taco Place' },
-  { title: 'Chinese', cursine: 'Tang Noodles' },
-  { title: 'Thai', cursine: 'Thai Market' },
-  { title: 'American', cursine: 'Shake Shack' }]
+  { title: 'Mexican', cuisine: 'Taco Place' },
+  { title: 'Chinese', cuisine: 'Tang Noodles' },
+  { title: 'Thai', cuisine: 'Thai Market' },
+  { title: 'American', cuisine: 'Shake Shack' }]
