@@ -22,6 +22,7 @@ import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import AvatarGroup from '@mui/material/AvatarGroup';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const Image = styled('img')({
   width: '100px',
@@ -34,12 +35,13 @@ export default function MyApp() {
   const upperNavi = {
     display: 'flex',
     'justify-content': 'space-between',
-    padding: '10px 30px',
+    padding: '10px 20px',
     'font-size': '17px',
     'font-weight': '600'
   };
   const title = {
     'font-weight': '600',
+    padding: '0 20px'
   };
 
   return (
@@ -49,7 +51,7 @@ export default function MyApp() {
         <div>
           <SignalCellularAltRoundedIcon />
           <WifiIcon />
-          <Battery5BarRoundedIcon />
+          <Battery5BarRoundedIcon style={{ transform: 'rotate(90deg)' }} />
         </div>
       </div>
 
@@ -72,49 +74,56 @@ export default function MyApp() {
         }}
       />
 
-      <FormControl sx={{ m: 1, minWidth: 90 }}>
-        <InputLabel htmlFor="grouped-native-select">Cursine</InputLabel>
-        <Select native defaultValue="" id="grouped-native-select" label="Cursine">
-          <option aria-label="None" value="" />
-          <optgroup label="Japanese">
-            <option value={1}>Sushi</option>
-            <option value={2}>Ramen</option>
-          </optgroup>
-          <optgroup label="American">
-            <option value={3}>Burger</option>
-            <option value={4}>Pizza</option>
-          </optgroup>
-        </Select>
-      </FormControl>
-      <FormControl sx={{ m: 1, minWidth: 90 }}>
-        <InputLabel htmlFor="grouped-select">Time</InputLabel>
-        <Select defaultValue="" id="grouped-select" label="Time">
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={1}>Today</MenuItem>
-          <MenuItem value={2}>7 days</MenuItem>
-          <MenuItem value={3}>14 days</MenuItem>
-          <MenuItem value={4}>30 days</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl sx={{ m: 1, minWidth: 90 }}>
-        <InputLabel htmlFor="grouped-select-2">Budget</InputLabel>
-        <Select defaultValue="" id="grouped-select-2" label="Budget">
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={5}>$10-$20</MenuItem>
-          <MenuItem value={6}>$20-$50</MenuItem>
-          <MenuItem value={7}>$50+</MenuItem>
-        </Select>
-      </FormControl>
+      <div style={{ 'padding-left': "10px" }}>
+        <FormControl sx={{ m: 1, minWidth: 90 }}>
+          <InputLabel htmlFor="grouped-native-select">Cursine</InputLabel>
+          <Select native defaultValue="" id="grouped-native-select" label="Cursine">
+            <option aria-label="None" value="" />
+            <optgroup label="Japanese">
+              <option value={1}>Sushi</option>
+              <option value={2}>Ramen</option>
+            </optgroup>
+            <optgroup label="American">
+              <option value={3}>Burger</option>
+              <option value={4}>Pizza</option>
+            </optgroup>
+          </Select>
+        </FormControl>
+        <FormControl sx={{ m: 1, minWidth: 90 }}>
+          <InputLabel htmlFor="grouped-select">Time</InputLabel>
+          <Select defaultValue="" id="grouped-select" label="Time">
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={1}>Today</MenuItem>
+            <MenuItem value={2}>7 days</MenuItem>
+            <MenuItem value={3}>14 days</MenuItem>
+            <MenuItem value={4}>30 days</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl sx={{ m: 1, minWidth: 90 }}>
+          <InputLabel htmlFor="grouped-select-2">Budget</InputLabel>
+          <Select defaultValue="" id="grouped-select-2" label="Budget">
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={5}>$10-$20</MenuItem>
+            <MenuItem value={6}>$20-$50</MenuItem>
+            <MenuItem value={7}>$50+</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
 
-      <Grid item xs>
+
+      <Grid>
         <SkeletonChildrenDemo />
       </Grid>
-
-
+      <Grid>
+        <SkeletonChildrenDemo />
+      </Grid>
+      <Grid>
+        <SkeletonChildrenDemo />
+      </Grid>
 
       <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, width: 400 }} showLabels>
         <BottomNavigationAction
@@ -152,16 +161,22 @@ function SkeletonChildrenDemo() {
           </AvatarGroup>
         </Box>
       </Box>
-      <div style={{ width:'350px', height:'1px', background:'#D4D4D5', margin:'0 auto' }}></div>
+      <div style={{ width: '350px', height: '1px', background: '#D4D4D5', margin: '0 auto' }}></div>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <Image
-          src="https://pi.tedcdn.com/r/talkstar-photos.s3.amazonaws.com/uploads/72bda89f-9bbf-4685-910a-2f151c4f3a8a/NicolaSturgeon_2019T-embed.jpg?w=512"
-          alt=""
-        />
-        <ul>
+        <div style={{ position: 'relative' }}>
+          <IconButton color="primary" aria-label="add to favorite" style={{ position: 'absolute', right: '0px', color: 'white'}}>
+            <FavoriteBorderIcon />
+          </IconButton>
+          <Image
+            src="https://pi.tedcdn.com/r/talkstar-photos.s3.amazonaws.com/uploads/72bda89f-9bbf-4685-910a-2f151c4f3a8a/NicolaSturgeon_2019T-embed.jpg?w=512"
+            alt=""
+          />
+        </div>
+
+        <ul style={{ 'list-style': 'none' }}>
           <li>Thai Market</li>
-          <li>Thai Market</li>
-          <li>Thai Market</li>
+          <li>Friday, Dec 9th, 12:00 p.m.</li>
+          <li>960 Amsterdam Ave</li>
         </ul>
       </div>
 
