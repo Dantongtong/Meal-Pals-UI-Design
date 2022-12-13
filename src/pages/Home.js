@@ -150,10 +150,3 @@ function SkeletonChildrenDemo() {
   );
 }
 
-
-
-const restaurants = [
-  { title: 'Mexican', cuisine: 'Taco Place' },
-  { title: 'Chinese', cuisine: 'Tang Noodles' },
-  { title: 'Thai', cuisine: 'Thai Market' },
-  { title: 'American', cuisine: 'Shake Shack' }]

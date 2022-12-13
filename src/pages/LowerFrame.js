@@ -14,22 +14,18 @@ export default function UpperFrame() {
         width: 400
     };
     return (
-        <BottomNavigation style={lowerNavi} showLabel>
-
+        <BottomNavigation style={lowerNavi}>
             <BottomNavigationAction
-                label="Home"
                 icon={<HomeOutlinedIcon />}
+                component={Link} to='/' label="Home" value="Home"
             />
-
-            <Link to='/post'>
-                <BottomNavigationAction
-                    label="Post"
-                    icon={<AddCircleOutlineOutlinedIcon />}
-                />
-            </Link>
             <BottomNavigationAction
-                label="Message"
+                icon={<AddCircleOutlineOutlinedIcon />}
+                component={Link} to='/post' label={'Post'}
+            />
+            <BottomNavigationAction
                 icon={<SmsOutlinedIcon />}
+                component={Link} to='/' label={'Message'}
             />
             <BottomNavigationAction label="Profile" icon={<PersonOutlineOutlinedIcon />} />
         </BottomNavigation>
