@@ -32,7 +32,8 @@ export default function Home() {
 
   return (
     <div>
-      <LowerFrame/>
+      <UpperFrame/>
+      
 
       <div style={title}>
         <h2>Meal Pals</h2>
@@ -104,7 +105,7 @@ export default function Home() {
         <SkeletonChildrenDemo />
       </Grid>
 
-      <UpperFrame/>
+      <LowerFrame/>
 
     </div>
 
