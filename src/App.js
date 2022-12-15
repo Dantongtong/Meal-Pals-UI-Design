@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home';
 import Post from './pages/Post';
+import Create from './pages/Create';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Routes>
         <Route path="/post" element={<Post/>}/>
         <Route path="/" element={<Home/>}/>
+        <Route path="/create" element={<Create/>}/>
       </Routes>
     </Router>
   );
