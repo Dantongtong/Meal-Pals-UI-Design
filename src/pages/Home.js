@@ -3,7 +3,7 @@ import LowerFrame from './LowerFrame';
 import UpperFrame from './UpperFrame';
 import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
+import * as MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import SearchIcon from '@mui/icons-material/Search';
@@ -34,7 +34,6 @@ export default function Home() {
     <div>
       <UpperFrame/>
       
-
       <div style={title}>
         <h2>Meal Pals</h2>
         <h3>join a meal with schoolmates!</h3>
