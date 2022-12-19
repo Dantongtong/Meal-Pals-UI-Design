@@ -15,6 +15,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Stack from "@mui/material/Stack";
 import Typography from '@mui/material/Typography';
+import Chip from '@mui/material/Chip';
 
 
 export default function Profile() {
@@ -63,13 +64,29 @@ export default function Profile() {
             <Button variant="contained" style={{ 'float': 'right', 'margin-right': '10px' }} component={Link} to='/'>Settings</Button>
 
             <Box sx={{ margin: 2, width: '100%', display: 'flex', alignItems: 'center' }}>
-                <Box sx={{ margin: 2, display: 'flex', alignItems: 'center', fontWeight: 'bold' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', fontWeight: 'bold' }}>
                     <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
-                    <Stack sx={{width: '100%', alignItems: 'left' }}>
+                    <Stack sx={{ margin: 2, width: '100%', alignItems: 'left' }}>
                         <inputSubTitle2>  John Adams  </inputSubTitle2>
                         <Typography>Senior Student, CS Major</Typography>
                     </Stack>
                 </Box>
+            </Box>
+
+            <Box sx={{ margin: 2, width: '100%', display: 'flex', alignItems: 'center' }}>
+                <Stack sx={{width: '100%', alignItems: 'left', fontWeight: 'bold' }}>
+                    <inputSubTitle>Bio</inputSubTitle>
+                    <Stack sx={{ ml: 5, width: '100%', alignItems: 'left', fontWeight: 'bold' }}>
+                        <Typography>Has a dog named Charlie</Typography>
+                        <Typography>Loves crafting and DIYs!</Typography>
+                        <Typography>Into Asian cuisine</Typography>
+                    </Stack>
+                    <inputSubTitle>Flavor Preference</inputSubTitle>
+                    <Box sx={{width: '100%', alignItems: 'left', fontWeight: 'bold' }}>
+                        <Chip label="Chinese" />
+                        <Chip label="Mexican" />
+                    </Box>
+                </Stack>
             </Box>
 
             <LowerFrame />
