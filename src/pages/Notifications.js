@@ -10,6 +10,9 @@ import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import { Tab, Tabs } from '@mui/material';
 import { useState } from 'react';
+import CancelIcon from '@mui/icons-material/Cancel';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import IconButton from '@mui/material/IconButton';
 
 
 export default function Notifications() {
@@ -37,12 +40,22 @@ export default function Notifications() {
 function UpcomingNotificationCard(props) {
     return (
         <div>
-            <Box sx={{padding: 1, display: 'flex', alignItems: 'center', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>
+            <Box sx={{ padding: 1, display: 'flex', alignItems: 'center', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>
                 <Box sx={{ margin: 1 }}>
                     <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
                 </Box>
-                <Box sx={{ width: '50%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Stack sx={{ width: '75%', display: 'flex', alignItems: 'left' }}>
                     <Typography><b>{props.name}</b> wants to join your event at <b>{props.location}.</b></Typography>
+                    <Button variant="contained" style={{'margin-right': '100px' }} component={Link} to='/editprofile'>Message</Button>
+                </Stack>
+                <Box sx={{ width: '25%', display: 'flex', alignItems: 'center' }}>
+                    <IconButton color='#f44336' aria-label="Reject">
+                        <CancelIcon />
+                    </IconButton>
+                    <IconButton color="primary" aria-label="Accept">
+                        <CheckCircleIcon />
+                    </IconButton>
+        
                 </Box>
             </Box>
         </div >
