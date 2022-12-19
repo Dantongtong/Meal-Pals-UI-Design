@@ -44,11 +44,10 @@ export default function Create() {
                 <div style={inputTitle}>Event Information</div>
                 <div>
                     <div style={subtitle}>Date and Time</div>
-                    <DatePicker />
+                    <DatePicker style={{'margin-right':'10px'}}/>
                     <TimePicker defaultOpenValue={dayjs('00:00:00', 'HH:mm:ss')} />
                     <div style={banner}></div>
                 </div>
-
 
                 <div>
                     <div>Maximum Number of Participants</div>
@@ -70,7 +69,7 @@ export default function Create() {
 
                 <div style={switchControl}>
                     <Button variant="contained" component={Link} to='/post'>Previous</Button>
-                    <Button variant="contained">Next</Button>
+                    <Button variant="contained" component={Link} to='/'>Post</Button>
                 </div>
                 <LowerFrame />
             </div>

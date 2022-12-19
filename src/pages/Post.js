@@ -96,7 +96,7 @@ export default function Post() {
                 </FormControl>
             </div>
 
-            <Button variant="contained" style={{'float':'right', 'margin-right':'10px'}} component={Link} to='/create'>Create</Button>
+            <Button variant="contained" style={{'float':'right', 'margin-right':'10px'}} component={Link} to='/confirm'>Create</Button>
             
             <LowerFrame />
         </div >

@@ -7,6 +7,7 @@ import {
 import Home from './pages/Home';
 import Post from './pages/Post';
 import Create from './pages/Create';
+import Confirm from './pages/Confirm';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/post" element={<Post/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/create" element={<Create/>}/>
+        <Route path="/confirm" element={<Confirm/>}/>
       </Routes>
     </Router>
   );
