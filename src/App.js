@@ -11,6 +11,7 @@ import Confirm from './pages/Confirm';
 import Profile from './pages/Profile'; 
 import EditProfile from './pages/EditProfile'; 
 import Interests from './pages/Interests';
+import DietaryRestrictions from './pages/DietaryRestrictions';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/editprofile" element={<EditProfile/>}/>
         <Route path="/interests" element={<Interests/>}/>
+        <Route path="/restrictions" element={<DietaryRestrictions/>}/>
       </Routes>
     </Router>
   );

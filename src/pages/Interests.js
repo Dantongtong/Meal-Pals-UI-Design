@@ -12,12 +12,6 @@ import {FormGroup, FormControlLabel, Checkbox, TextField} from '@mui/material';
 
 export default function Interests() {
 
-    const [tabIndex, setTabIndex] = useState(0);
-
-    const handleTabChange = (event, newTabIndex) => {
-        setTabIndex(newTabIndex);
-    };
-
     return (
         <div>
             <Box sx={{ margin: 2, width: '100%', display: 'flex', alignItems: 'center' }}>

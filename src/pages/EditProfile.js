@@ -61,7 +61,7 @@ export default function EditProfile() {
                     </Button>
                 </Box>
                 <Box sx={{ width: '100%', border: '1px #D4D4D5 solid', justifyContent: 'space-between' }}>
-                    <Button endIcon={<ArrowForwardIcon />} component={Link} to='/profile'>
+                    <Button endIcon={<ArrowForwardIcon />} component={Link} to='/restrictions'>
                         Dietary Restrictions
                     </Button>
                 </Box>
