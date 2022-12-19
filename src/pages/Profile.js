@@ -1,31 +1,19 @@
 import * as React from 'react';
 import UpperFrame from './UpperFrame';
 import LowerFrame from './LowerFrame';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import SearchIcon from '@mui/icons-material/Search';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
-import AvatarGroup from '@mui/material/AvatarGroup';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Stack from "@mui/material/Stack";
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
+import { Tab, Tabs } from '@mui/material';
+import { useState } from 'react';
 
 
 export default function Profile() {
-    const Image = styled('img')({
-        width: '100px',
-        height: '100px',
-        'border-radius': '8px',
-        'padding': '5px'
-    });
-
     const title = {
         'font-weight': '600',
         'font-size': '22px',
@@ -56,6 +44,13 @@ export default function Profile() {
         'font-size': '13px',
         'line-height': '16px'
     };
+
+    const [tabIndex, setTabIndex] = useState(0);
+
+    const handleTabChange = (event, newTabIndex) => {
+        setTabIndex(newTabIndex);
+    };
+
     return (
         <div>
             <UpperFrame />
@@ -74,7 +69,7 @@ export default function Profile() {
             </Box>
 
             <Box sx={{ margin: 2, width: '100%', display: 'flex', alignItems: 'center' }}>
-                <Stack sx={{width: '100%', alignItems: 'left', fontWeight: 'bold' }}>
+                <Stack sx={{ width: '100%', alignItems: 'left', fontWeight: 'bold' }}>
                     <inputSubTitle>Bio</inputSubTitle>
                     <Stack sx={{ ml: 5, width: '100%', alignItems: 'left', fontWeight: 'bold' }}>
                         <Typography>Has a dog named Charlie</Typography>
@@ -82,20 +77,41 @@ export default function Profile() {
                         <Typography>Into Asian cuisine</Typography>
                     </Stack>
                     <inputSubTitle>Flavor Preference</inputSubTitle>
-                    <Box sx={{width: '100%', alignItems: 'left', fontWeight: 'bold' }}>
+                    <Box sx={{ width: '100%', alignItems: 'left', fontWeight: 'bold' }}>
                         <Chip label="Chinese" />
                         <Chip label="Mexican" />
                     </Box>
                 </Stack>
             </Box>
 
+            <Box>
+                <Box>
+                    <Tabs value={tabIndex} onChange={handleTabChange}>
+                        <Tab label="Tab 1" />
+                        <Tab label="Tab 2" />
+                        <Tab label="Tab 3" />
+                    </Tabs>
+                </Box>
+                <Box sx={{ padding: 2 }}>
+                    {tabIndex === 0 && (
+                        <Box>
+                            <Typography>The first tab</Typography>
+                        </Box>
+                    )}
+                    {tabIndex === 1 && (
+                        <Box>
+                            <Typography>The second tab</Typography>
+                        </Box>
+                    )}
+                    {tabIndex === 2 && (
+                        <Box>
+                            <Typography>The third tab</Typography>
+                        </Box>
+                    )}
+                </Box>
+            </Box>
+
             <LowerFrame />
         </div >
     );
 }
-
-const restaurants = [
-    { code: 'Crab House All You Can Eat Seafood', distance: '3.3 mi', street: '135 E 55th St', city: 'New York' },
-    { code: 'Shaking Crab', distance: '0.2 mi', street: '2869 Broadway', city: 'New York' },
-    { code: 'Crab Du Jour', distance: '2.9 mi', street: '8101 Tonnelle Ave, Ste 2', city: 'North Bergen' }
-]
