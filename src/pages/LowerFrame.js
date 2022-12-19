@@ -25,7 +25,7 @@ export default function UpperFrame() {
             />
             <BottomNavigationAction
                 icon={<SmsOutlinedIcon />}
-                component={Link} to='/' label={'Message'}
+                component={Link} to='/notifications' label={'Message'}
             />
             <BottomNavigationAction 
                 icon={<PersonOutlineOutlinedIcon />}

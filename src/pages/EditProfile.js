@@ -29,7 +29,7 @@ export default function EditProfile() {
             <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent:'center', fontWeight: 'bold' }}>
                 <h3>Profile</h3>
             </Box>
-            <Box sx={{ margin: 2,width: '100%', display: 'flex', justifyContent: "center", fontWeight: 'bold' }}>
+            <Box sx={{ margin: 2, display: 'flex', justifyContent: "center", fontWeight: 'bold' }}>
                 <Stack>
                     <Avatar
                         src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg"
