@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Post from './pages/Post';
 import Create from './pages/Create';
 import Confirm from './pages/Confirm';
+import Profile from './pages/Profile'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/create" element={<Create/>}/>
         <Route path="/confirm" element={<Confirm/>}/>
+        <Route path="/profile" element={<Profile/>}/>
       </Routes>
     </Router>
   );
