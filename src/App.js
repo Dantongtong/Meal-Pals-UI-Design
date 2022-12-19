@@ -13,6 +13,7 @@ import EditProfile from './pages/EditProfile';
 import Interests from './pages/Interests';
 import DietaryRestrictions from './pages/DietaryRestrictions';
 import Settings from './pages/Settings';
+import Notifications from './pages/Notifications';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/interests" element={<Interests/>}/>
         <Route path="/restrictions" element={<DietaryRestrictions/>}/>
         <Route path="/settings" element={<Settings/>}/>
+        <Route path="/notifications" element={<Notifications/>}/>
       </Routes>
     </Router>
   );
