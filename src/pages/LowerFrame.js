@@ -27,7 +27,10 @@ export default function UpperFrame() {
                 icon={<SmsOutlinedIcon />}
                 component={Link} to='/' label={'Message'}
             />
-            <BottomNavigationAction label="Profile" icon={<PersonOutlineOutlinedIcon />} />
+            <BottomNavigationAction 
+                icon={<PersonOutlineOutlinedIcon />}
+                component={Link} to='/profile' label={'Profile'}
+             />
         </BottomNavigation>
     )
 }
