@@ -7,8 +7,7 @@ import Stack from "@mui/material/Stack";
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import UploadIcon from '@mui/icons-material/Upload';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import {FormGroup, FormControlLabel, Checkbox, TextField} from '@mui/material';
 
 
 export default function Interests() {
@@ -26,8 +25,19 @@ export default function Interests() {
                     Go Back
                 </Button>
             </Box>
-            <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent:'center', fontWeight: 'bold' }}>
+            <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>
                 <h3>Interests</h3>
+            </Box>
+            <Box sx={{ margin: 5, width: '100%', display: 'flex', alignItems: 'center' }}>
+                <FormGroup>
+                    <FormControlLabel control={<Checkbox />} label="American" />
+                    <FormControlLabel control={<Checkbox defaultChecked />} label="Chinese" />
+                    <FormControlLabel control={<Checkbox />} label="French" />
+                    <FormControlLabel control={<Checkbox />} label="Indian" />
+                    <FormControlLabel control={<Checkbox />} label="Japanese" />
+                    <FormControlLabel control={<Checkbox defaultChecked />} label="Mexican" />
+                    <FormControlLabel control={<Checkbox />} label="Thai" />
+                </FormGroup>
             </Box>
         </div >
     );
