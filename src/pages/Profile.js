@@ -84,28 +84,45 @@ export default function Profile() {
                 </Stack>
             </Box>
 
-            <Box>
+            <Box sx={{ margin: 2 }}>
                 <Box>
                     <Tabs value={tabIndex} onChange={handleTabChange}>
-                        <Tab label="Tab 1" />
-                        <Tab label="Tab 2" />
-                        <Tab label="Tab 3" />
+                        <Tab label="Upcoming" />
+                        <Tab label="Past" />
+                        <Tab label="Saved" />
                     </Tabs>
                 </Box>
-                <Box sx={{ padding: 2 }}>
+                <Box sx={{ padding: 2, border: '1px #D4D4D5 solid' }}>
                     {tabIndex === 0 && (
                         <Box>
-                            <Typography>The first tab</Typography>
+                            <Stack sx={{ mt: 2, padding: 2, border: '1px #D4D4D5 solid', 'border-radius': '8px', fontWeight: 'bold' }}>
+                                <inputSubTitle2>Shake Shack</inputSubTitle2>
+                                <Typography>12/20/2022, 6:00 pm</Typography>
+                                <Typography>Status: 2 joined, 3 available</Typography>
+                            </Stack>
+                            <Stack sx={{ mt: 2, padding: 2, border: '1px #D4D4D5 solid', 'border-radius': '8px', fontWeight: 'bold' }}>
+                                <inputSubTitle2>Crab House</inputSubTitle2>
+                                <Typography>12/24/2022, 8:00 pm</Typography>
+                                <Typography>Status: 2 joined, 1 available</Typography>
+                            </Stack>
                         </Box>
                     )}
                     {tabIndex === 1 && (
                         <Box>
-                            <Typography>The second tab</Typography>
+                            <Stack sx={{ mt: 2, padding: 2, border: '1px #D4D4D5 solid', 'border-radius': '8px', fontWeight: 'bold' }}>
+                                <inputSubTitle2>Thai Market</inputSubTitle2>
+                                <Typography>11/16/2022, 7:00 pm</Typography>
+                                <Typography>Status: Complete</Typography>
+                            </Stack>
                         </Box>
                     )}
                     {tabIndex === 2 && (
                         <Box>
-                            <Typography>The third tab</Typography>
+                            <Stack sx={{ mt: 2, padding: 2, border: '1px #D4D4D5 solid', 'border-radius': '8px', fontWeight: 'bold' }}>
+                                <inputSubTitle2>Tacombi</inputSubTitle2>
+                                <Typography>1/23/2023, 7:30 pm</Typography>
+                                <Typography>Status: 1 joined, 3 available</Typography>
+                            </Stack>
                         </Box>
                     )}
                 </Box>
