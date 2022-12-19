@@ -49,7 +49,7 @@ function UpcomingNotificationCard(props) {
                 </Box>
                 <Stack sx={{ width: '75%', display: 'flex', alignItems: 'left' }}>
                     <Typography><b>{props.name}</b> wants to join your event at <b>{props.location}.</b></Typography>
-                    <Button variant="contained" style={{ 'margin-right': '100px', borderRadius: 28 }} component={Link} to='/editprofile'>Message</Button>
+                    <Button variant="contained" style={{ 'margin-right': '100px', borderRadius: 28 }} component={Link} to={`/message/${props.name}/${props.location}`}>Message</Button>
                 </Stack>
                 <Box sx={{ width: '25%', display: 'flex', alignItems: 'center' }}>
                     <IconButton color='#f44336' aria-label="Reject">
@@ -74,7 +74,7 @@ function PastRequest(props) {
                     </Box>
                     <Stack sx={{ width: '90%', display: 'flex', alignItems: 'left' }}>
                         <Typography><b>{props.name}</b> wants to join your event at <b>{props.location}.</b></Typography>
-                        <Button variant="contained" style={{ 'margin-right': '55%' , borderRadius: 28}} component={Link} to='/editprofile'>Message</Button>
+                        <Button variant="contained" style={{ 'margin-right': '55%' , borderRadius: 28}} component={Link} to={`/message/${props.name}/${props.location}`}>Message</Button>
                     </Stack>
                     <Box sx={{ width: '10%', display: 'flex', alignItems: 'center' }}>
                         <IconButton color="primary" aria-label="Accept">
@@ -94,7 +94,7 @@ function PastRequest(props) {
                     </Box>
                     <Stack sx={{ width: '90%', display: 'flex', alignItems: 'left' }}>
                         <Typography><b>{props.name}</b> wants to join your event at <b>{props.location}.</b></Typography>
-                        <Button variant="contained" style={{ 'margin-right': '55%', borderRadius: 28 }} component={Link} to='/editprofile'>Message</Button>
+                        <Button variant="contained" style={{ 'margin-right': '55%', borderRadius: 28 }} component={Link} to={`/message/${props.name}/${props.location}`}>Message</Button>
                     </Stack>
                     <Box sx={{ width: '10%', display: 'flex', alignItems: 'center' }}>
                         <IconButton color='#f44336' aria-label="Reject">
@@ -117,7 +117,7 @@ function PastResult(props) {
                     </Box>
                     <Stack sx={{ width: '90%', display: 'flex', alignItems: 'left' }}>
                         <Typography><b>{props.name}</b> accepted you to join the <b>{props.location} event.</b></Typography>
-                        <Button variant="contained" style={{ 'margin-right': '60%', borderRadius: 28 }} component={Link} to='/editprofile'>Message</Button>
+                        <Button variant="contained" style={{ 'margin-right': '60%', borderRadius: 28 }} component={Link} to={`/message/${props.name}/${props.location}`}>Message</Button>
                     </Stack>
                 </Box>
             </div >
