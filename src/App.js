@@ -10,6 +10,7 @@ import Create from './pages/Create';
 import Confirm from './pages/Confirm';
 import Profile from './pages/Profile'; 
 import EditProfile from './pages/EditProfile'; 
+import Interests from './pages/Interests';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/confirm" element={<Confirm/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/editprofile" element={<EditProfile/>}/>
+        <Route path="/interests" element={<Interests/>}/>
       </Routes>
     </Router>
   );
