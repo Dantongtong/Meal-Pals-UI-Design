@@ -25,7 +25,7 @@ export default function Profile() {
             <UpperFrame />
 
             <Button variant="contained" style={{ 'float': 'right', 'margin-right': '10px' }} component={Link} to='/editprofile'>Edit Profile</Button>
-            <Button variant="contained" style={{ 'float': 'right', 'margin-right': '10px' }} component={Link} to='/'>Settings</Button>
+            <Button variant="contained" style={{ 'float': 'right', 'margin-right': '10px' }} component={Link} to='/settings'>Settings</Button>
 
             <Box sx={{ margin: 2, width: '100%', display: 'flex', alignItems: 'center' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', fontWeight: 'bold' }}>
