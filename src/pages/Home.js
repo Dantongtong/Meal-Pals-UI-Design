@@ -59,7 +59,7 @@ export default function Home() {
 
       <div style={{ 'padding-left': "10px" }}>
         <FormControl sx={{ m: 1, minWidth: 90 }}>
-          <InputLabel htmlFor="grouped-native-select">cuisine</InputLabel>
+          <InputLabel htmlFor="grouped-native-select">Cuisine</InputLabel>
           <Select native defaultValue="" id="grouped-native-select" label="cuisine">
             <option aria-label="None" value="" />
             <optgroup label="Japanese">
@@ -122,11 +122,11 @@ function SkeletonChildrenDemo(props) {
   const totalString = total.toString(); 
   const subheader = props.joined + " joined / " + totalString + " total"; 
   return (
-    <div style={{ margin: '10px', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>
+    <div style={{ margin: '10px', border: '1px #D4D4D5 solid', 'border-radius': '4px' }}>
       <Card>
         <CardHeader sx={{ maxHeight: 10 }}
           avatar={
-            <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" 
+            <Avatar src="https://img1.baidu.com/it/u=2885619241,1407342247&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200" 
             sx={{ width: 30, height: 30 }}
             />
           }
@@ -134,7 +134,7 @@ function SkeletonChildrenDemo(props) {
             <AvatarGroup total={joinedInt}>
               {Array.from({ length: joinedInt }, (_, i) =>
                 <span key={i}>
-                  <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" 
+                  <Avatar src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466" 
                   sx={{ width: 30, height: 30 }}/>
                 </span>)}
             </AvatarGroup>
@@ -143,7 +143,7 @@ function SkeletonChildrenDemo(props) {
           subheader= {subheader}
         />
         <CardActionArea component={Link} to={`/eventdetail/${props.name}/${props.location}/${props.time}/${props.joined}/${props.left}`}>
-          <CardContent sx={{ maxHeight: 100 }}>
+          <CardContent sx={{ maxHeight: 100, 'padding': '5px 16px 16px' }}>
             <div style={{ width: '350px', height: '1px', background: '#D4D4D5', margin: '0 auto' }}></div>
             <div style={{ display: 'flex', flexDirection: 'row' }}>
               <div style={{ position: 'relative' }}>
@@ -151,15 +151,15 @@ function SkeletonChildrenDemo(props) {
                   <FavoriteBorderIcon />
                 </IconButton>
                 <Image
-                  src="https://pi.tedcdn.com/r/talkstar-photos.s3.amazonaws.com/uploads/72bda89f-9bbf-4685-910a-2f151c4f3a8a/NicolaSturgeon_2019T-embed.jpg?w=512"
+                  src="https://img1.baidu.com/it/u=2079428828,3771288806&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=371"
                   alt=""                />
               </div>
 
-              <ul style={{'list-style': 'none', 'line-height':'2em'}}>
-                <li><b>{props.location}</b></li>
-                <li>{props.time}</li>
-                <li>960 Amsterdam Ave</li>
-              </ul>
+              <div style={{'list-style': 'none', 'line-height':'2em', 'padding': '10px'}}>
+                <div><b>{props.location}</b></div>
+                <div>{props.time}</div>
+                <div>960 Amsterdam Ave</div>
+              </div>
             </div>
           </CardContent>
         </CardActionArea>

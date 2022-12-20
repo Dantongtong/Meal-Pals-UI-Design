@@ -47,8 +47,8 @@ export default function Post() {
     const [resaddress, setAddress] = useState('');
 
     const changeName = (event, newValue) => {
-        setName(newValue.code)
-        setAddress(newValue.street)
+        setName(newValue.code);
+        setAddress(newValue.street);
     };
     return (
         <div>
@@ -69,7 +69,7 @@ export default function Post() {
                     renderOption={(props, option) => (
                         <div {...props} style={inputTitle}>
                             <div style={inputSubTitle}>{`${option.code}`}</div>
-                            <div style={inputSubTitle2}>{`${option.distance} · ${option.street} · ${option.city}`}</div>
+                            <div style={inputSubTitle2}>{`${option.distance} · ${option.street}`}</div>
                         </div>
                     )}
                     renderInput={(params) => (
@@ -113,7 +113,7 @@ export default function Post() {
 }
 
 const restaurants = [
-    { code: 'Crab House All You Can Eat Seafood', distance: '3.3 mi', street: '135 E 55th St', city: 'New York' },
-    { code: 'Shaking Crab', distance: '0.2 mi', street: '2869 Broadway', city: 'New York' },
-    { code: 'Crab Du Jour', distance: '2.9 mi', street: '8101 Tonnelle Ave, Ste 2', city: 'North Bergen' }
+    { code: 'Crab House All You Can Eat Seafood', distance: '3.3 mi', street: '135 E 55th St, New York' },
+    { code: 'Shaking Crab', distance: '0.2 mi', street: '2869 Broadway, New York' },
+    { code: 'Crab Du Jour', distance: '2.9 mi', street: '8101 Tonnelle Ave, Ste 2, North Bergen' }
 ]
