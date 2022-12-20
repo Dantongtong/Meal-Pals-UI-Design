@@ -15,6 +15,7 @@ import DietaryRestrictions from './pages/DietaryRestrictions';
 import Settings from './pages/Settings';
 import Notifications from './pages/Notifications';
 import Messages from './pages/Messages';
+import EventDetail from './pages/EventDetail';
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/settings" element={<Settings/>}/>
         <Route path="/notifications" element={<Notifications/>}/>
         <Route path="/message/:user/:location" element={<Messages/>}/>
+        <Route path="/eventdetail" element={<EventDetail/>}/>
       </Routes>
     </Router>
   );
