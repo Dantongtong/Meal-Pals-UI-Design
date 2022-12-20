@@ -1,13 +1,9 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
-import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
-import Stack from "@mui/material/Stack";
-import Typography from '@mui/material/Typography';
-import { useState } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import {FormGroup, FormControlLabel, Checkbox, TextField} from '@mui/material';
+import {FormGroup, FormControlLabel, Checkbox} from '@mui/material';
 
 
 export default function Interests() {

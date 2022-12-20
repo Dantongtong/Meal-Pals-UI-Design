@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import {FormGroup, FormControlLabel, Checkbox, TextField} from '@mui/material';
+import {FormGroup, FormControlLabel, Checkbox} from '@mui/material';
 
 
 export default function DietaryRestrictions() {

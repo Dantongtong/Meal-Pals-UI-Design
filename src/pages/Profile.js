@@ -21,7 +21,7 @@ export default function Profile() {
     };
 
     return (
-        <div>
+        <div style={{overflow: 'hidden'}}>
             <UpperFrame />
 
             <Button variant="contained" style={{ 'float': 'right', 'margin-right': '10px' }} component={Link} to='/editprofile'>Edit Profile</Button>

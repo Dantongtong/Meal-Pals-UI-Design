@@ -7,9 +7,6 @@ import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Stack from "@mui/material/Stack";
 import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
-import { Tab, Tabs } from '@mui/material';
-import { useState } from 'react';
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import IconButton from '@mui/material/IconButton';
@@ -65,7 +62,7 @@ function UpcomingNotificationCard(props) {
 }
 
 function PastRequest(props) {
-    if (props.status == "Accept") {
+    if (props.status === "Accept") {
         return (
             <div>
                 <Box sx={{ padding: 1, display: 'flex', alignItems: 'center', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>
@@ -108,7 +105,7 @@ function PastRequest(props) {
 }
 
 function PastResult(props) {
-    if (props.status == "Accept") {
+    if (props.status === "Accept") {
         return (
             <div>
                 <Box sx={{ padding: 1, display: 'flex', alignItems: 'center', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>

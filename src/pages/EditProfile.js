@@ -5,7 +5,6 @@ import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Stack from "@mui/material/Stack";
 import Typography from '@mui/material/Typography';
-import { useState } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import UploadIcon from '@mui/icons-material/Upload';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -42,15 +41,15 @@ export default function EditProfile() {
             </Box>
             <Stack sx={{ margin: 2, display: 'flex', fontWeight: 'bold' }}>
                 <Box sx={{ width: '100%', border: '1px #D4D4D5 solid', justifyContent: 'space-between' }}>
-                    <inputSubTitle2>Name</inputSubTitle2>
+                    <div style={inputSubTitle2}>Name</div>
                     <Typography>John Adams</Typography>
                 </Box>
                 <Box sx={{ width: '100%', border: '1px #D4D4D5 solid', justifyContent: 'space-between' }}>
-                    <inputSubTitle2>Title</inputSubTitle2>
+                    <div style={inputSubTitle2}>Title</div>
                     <Typography>Senior Student, CS Major</Typography>
                 </Box>
                 <Box sx={{ width: '100%', border: '1px #D4D4D5 solid', justifyContent: 'space-between' }}>
-                    <inputSubTitle2>Bio</inputSubTitle2>
+                    <div style={inputSubTitle2}>Bio</div>
                     <Typography>Has a dog named Charlie</Typography>
                     <Typography>Loves crafting and DIYs!</Typography>
                     <Typography>Into Asian cuisine</Typography>
