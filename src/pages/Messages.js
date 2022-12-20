@@ -22,7 +22,7 @@ export default function Messages() {
             <Box sx={{display: 'flex', border: '1px #D4D4D5 solid', justifyContent: "center", fontWeight: 'bold' }}>
                 <Stack>
                     <Avatar
-                        src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg"
+                        src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466"
                     />
                     <Typography> {user} </Typography>
                 </Stack>
