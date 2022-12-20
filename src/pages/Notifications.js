@@ -42,7 +42,7 @@ function UpcomingNotificationCard(props) {
         <div>
             <Box sx={{ padding: 1, display: 'flex', alignItems: 'center', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>
                 <Box sx={{ margin: 1 }}>
-                    <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                    <Avatar src="https://img1.baidu.com/it/u=2885619241,1407342247&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200" />
                 </Box>
                 <Stack sx={{ width: '75%', display: 'flex', alignItems: 'left' }}>
                     <Typography><b>{props.name}</b> wants to join your event at <b>{props.location}.</b></Typography>
@@ -67,7 +67,7 @@ function PastRequest(props) {
             <div>
                 <Box sx={{ padding: 1, display: 'flex', alignItems: 'center', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>
                     <Box sx={{ margin: 1 }}>
-                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                        <Avatar src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466" />
                     </Box>
                     <Stack sx={{ width: '90%', display: 'flex', alignItems: 'left' }}>
                         <Typography><b>{props.name}</b> wants to join your event at <b>{props.location}.</b></Typography>
@@ -87,7 +87,7 @@ function PastRequest(props) {
             <div>
                 <Box sx={{ padding: 1, display: 'flex', alignItems: 'center', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>
                     <Box sx={{ margin: 1 }}>
-                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                        <Avatar src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466" />
                     </Box>
                     <Stack sx={{ width: '90%', display: 'flex', alignItems: 'left' }}>
                         <Typography><b>{props.name}</b> wants to join your event at <b>{props.location}.</b></Typography>
@@ -110,7 +110,7 @@ function PastResult(props) {
             <div>
                 <Box sx={{ padding: 1, display: 'flex', alignItems: 'center', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>
                     <Box sx={{ margin: 1 }}>
-                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                        <Avatar src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466" />
                     </Box>
                     <Stack sx={{ width: '90%', display: 'flex', alignItems: 'left' }}>
                         <Typography><b>{props.name}</b> accepted you to join the <b>{props.location} event.</b></Typography>
@@ -125,7 +125,7 @@ function PastResult(props) {
             <div>
                 <Box sx={{ padding: 1, display: 'flex', alignItems: 'center', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>
                     <Box sx={{ margin: 1 }}>
-                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                        <Avatar src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466" />
                     </Box>
                     <Stack sx={{ width: '90%', display: 'flex', alignItems: 'left' }}>
                         <Typography><b>{props.name}</b> rejected you at the <b>{props.location} event.</b></Typography>

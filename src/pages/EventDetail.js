@@ -101,7 +101,7 @@ export default function EventDetail() {
                 </Stack>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Box sx={{ margin: 1 }}>
-                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg"
+                        <Avatar src="https://img1.baidu.com/it/u=2885619241,1407342247&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200"
                             sx={{ width: 60, height: 60 }} />
                     </Box>
                     <Stack sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'left' }}>
@@ -117,7 +117,7 @@ export default function EventDetail() {
                     <AvatarGroup total={joinedInt}>
                         {Array.from({ length: joinedInt }, (_, i) =>
                             <span key={i}>
-                                <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                                <Avatar src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466" />
                             </span>)}
                     </AvatarGroup>
                     <AvatarGroup total={leftInt}>
@@ -161,7 +161,7 @@ export default function EventDetail() {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                    You will join Kiley at Shake Shack on Nov 19, 2022, 12:00 p.m. 
+                    You will join {organizer} at {location} on {time}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
