@@ -3,7 +3,7 @@ import LowerFrame from './LowerFrame';
 import UpperFrame from './UpperFrame';
 import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
-import * as MenuItem from '@mui/material/MenuItem';
+// import * as MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import SearchIcon from '@mui/icons-material/Search';
@@ -73,39 +73,35 @@ export default function Home() {
           </Select>
         </FormControl>
         <FormControl sx={{ m: 1, minWidth: 90 }}>
-          <InputLabel htmlFor="grouped-select">Time</InputLabel>
-          <Select defaultValue="" id="grouped-select" label="Time">
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={1}>Today</MenuItem>
-            <MenuItem value={2}>7 days</MenuItem>
-            <MenuItem value={3}>14 days</MenuItem>
-            <MenuItem value={4}>30 days</MenuItem>
+          <InputLabel htmlFor="grouped-native-select">Time</InputLabel>
+          <Select native defaultValue="" id="grouped-native-select" label="Time">
+            <option aria-label="None" value="" />
+            <option value={1}>Today</option>
+            <option value={2}>7 days</option>
+            <option value={3}>14 days</option>
+            <option value={4}>30 days</option>
           </Select>
         </FormControl>
         <FormControl sx={{ m: 1, minWidth: 90 }}>
-          <InputLabel htmlFor="grouped-select-2">Budget</InputLabel>
-          <Select defaultValue="" id="grouped-select-2" label="Budget">
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={5}>$10-$20</MenuItem>
-            <MenuItem value={6}>$20-$50</MenuItem>
-            <MenuItem value={7}>$50+</MenuItem>
+          <InputLabel htmlFor="grouped-native-select">Budget</InputLabel>
+          <Select native defaultValue="" id="grouped-native-select" label="Budget">
+            <option aria-label="None" value="" />
+            <option value={5}>$10-$20</option>
+            <option value={6}>$20-$50</option>
+            <option value={7}>$50+</option>
           </Select>
         </FormControl>
       </div>
 
 
       <Grid>
-        <SkeletonChildrenDemo name="Eve" joined="2" left="1" location="Thai Market" time="Friday, Dec 9th, 12:00 p.m."/>
+        <SkeletonChildrenDemo name="Eve" joined="2" left="1" location="Thai Market" time="Friday, Dec 9th, 12:00 p.m." />
       </Grid>
       <Grid>
-        <SkeletonChildrenDemo name="Kiley" joined="3" left="1" location="Serafina" time="Saturday, Dec 31th, 8:00"/>
+        <SkeletonChildrenDemo name="Kiley" joined="3" left="1" location="Serafina" time="Saturday, Dec 31th, 8:00" />
       </Grid>
       <Grid>
-        <SkeletonChildrenDemo name="Dantong" joined="1" left="3" location="Amity Hall Uptown" time="Thursday, Jan 5th, 7:30 p.m."/>
+        <SkeletonChildrenDemo name="Dantong" joined="1" left="3" location="Amity Hall Uptown" time="Thursday, Jan 5th, 7:30 p.m." />
       </Grid>
 
       <LowerFrame />
@@ -116,31 +112,31 @@ export default function Home() {
 }
 
 function SkeletonChildrenDemo(props) {
-  const joinedInt = parseInt(props.joined, 10); 
-  const leftInt = parseInt(props.left, 10); 
-  const total = joinedInt + leftInt; 
-  const totalString = total.toString(); 
-  const subheader = props.joined + " joined / " + totalString + " total"; 
+  const joinedInt = parseInt(props.joined, 10);
+  const leftInt = parseInt(props.left, 10);
+  const total = joinedInt + leftInt;
+  const totalString = total.toString();
+  const subheader = props.joined + " joined / " + totalString + " total";
   return (
     <div style={{ margin: '10px', border: '1px #D4D4D5 solid', 'border-radius': '4px' }}>
       <Card>
         <CardHeader sx={{ maxHeight: 10 }}
           avatar={
-            <Avatar src="https://img1.baidu.com/it/u=2885619241,1407342247&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200" 
-            sx={{ width: 30, height: 30 }}
+            <Avatar src="https://img1.baidu.com/it/u=2885619241,1407342247&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200"
+              sx={{ width: 30, height: 30 }}
             />
           }
           action={
             <AvatarGroup total={joinedInt}>
               {Array.from({ length: joinedInt }, (_, i) =>
                 <span key={i}>
-                  <Avatar src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466" 
-                  sx={{ width: 30, height: 30 }}/>
+                  <Avatar src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466"
+                    sx={{ width: 30, height: 30 }} />
                 </span>)}
             </AvatarGroup>
           }
           title={props.name}
-          subheader= {subheader}
+          subheader={subheader}
         />
         <CardActionArea component={Link} to={`/eventdetail/${props.name}/${props.location}/${props.time}/${props.joined}/${props.left}`}>
           <CardContent sx={{ maxHeight: 100, 'padding': '5px 16px 16px' }}>
@@ -152,10 +148,10 @@ function SkeletonChildrenDemo(props) {
                 </IconButton>
                 <Image
                   src="https://img1.baidu.com/it/u=2079428828,3771288806&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=371"
-                  alt=""                />
+                  alt="" />
               </div>
 
-              <div style={{'list-style': 'none', 'line-height':'2em', 'padding': '10px'}}>
+              <div style={{ 'list-style': 'none', 'line-height': '2em', 'padding': '10px' }}>
                 <div><b>{props.location}</b></div>
                 <div>{props.time}</div>
                 <div>960 Amsterdam Ave</div>
