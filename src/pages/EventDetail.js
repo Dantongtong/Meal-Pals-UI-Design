@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from "react";
 import Button from '@mui/material/Button';
 import { Link, useParams } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -9,16 +10,20 @@ import Chip from '@mui/material/Chip';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import TextField from '@mui/material/TextField';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import IconButton from '@mui/material/IconButton';
 import StarIcon from '@mui/icons-material/Star';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import FaceIcon from '@mui/icons-material/Face';
+import NewReleasesIcon from '@mui/icons-material/NewReleases';
 
 
 export default function EventDetail() {
     const { organizer, location, time, joined, left } = useParams();
     const joinedInt = parseInt(joined, 10)
     const leftInt = parseInt(left, 10)
+
+    const [clicked, setClicked] = useState();
 
     const Header = {
         'font-size': '18px',
@@ -31,9 +36,16 @@ export default function EventDetail() {
         'line-height': '24px'
     };
 
+    const warning = {
+        'color': '#FEA600',
+        'font-weight': '600',
+        'font-size': '16px',
+        'line-height': '24px'
+    };
+
     const joined_left = {
         color: '#FEA600',
-        'font-size': '20px',
+        'font-size': '18px',
         'line-height': '24px'
     };
 
@@ -44,8 +56,8 @@ export default function EventDetail() {
                     <Button startIcon={<ArrowBackIcon />} component={Link} to='/'>
                         Back
                     </Button>
-                    <IconButton aria-label="favorite" size="small">
-                        <FavoriteBorderOutlinedIcon fontSize="inherit" />
+                    <IconButton aria-label="favorite" onClick={() => setClicked(!clicked)}>
+                        {clicked ? <FavoriteIcon /> : <FavoriteBorderOutlinedIcon />}
                     </IconButton>
                 </Box>
                 <Stack sx={{ alignItems: 'center' }}>
@@ -94,7 +106,26 @@ export default function EventDetail() {
                     </AvatarGroup>
                 </Box>
 
+                <Box sx={{ border: '1px #FEA600 solid', padding: 1, display: 'flex', alignItems: 'center', backgroundColor: '#FFF9ED' }}>
+                    <NewReleasesIcon sx={{ color: '#FEA600', fontSize: 30, padding: 0.5 }}></NewReleasesIcon>
+                    <div style={warning}>Someone in this event has a nut allergy. </div>
+                </Box>
+
+                <Stack sx={{ mt: 3, fontWeight: 'bold' }}>
+                    <div style={Header}>Event description</div>
+                </Stack>
+                <div style={description}>I walked past this restaurant and it looked so beautiful, so I decided I want to go there for brunch and to make new friends.</div>
+
+                <Stack sx={{ mt: 3, fontWeight: 'bold' }}>
+                    <Button  >
+                        More about {location}
+                    </Button>
+                </Stack>
+
             </Stack>
+
+            <Button variant="contained" style={{ 'float': 'right', 'margin-right': '20px', 'margin-top': '5px' }}>Join Now</Button>
+
 
         </div >
     );
