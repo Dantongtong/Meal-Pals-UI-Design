@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import { useState } from "react";
 
 
 export default function Post() {
@@ -27,7 +28,7 @@ export default function Post() {
         'font-size': '18px'
     };
     const inputTitle = {
-        display: 'flex', 
+        display: 'flex',
         'flex-direction': 'column'
     };
     const inputSubTitle = {
@@ -41,6 +42,13 @@ export default function Post() {
         'font-weight': 400,
         'font-size': '13px',
         'line-height': '16px'
+    };
+    const [resname, setName] = useState('');
+    const [resaddress, setAddress] = useState('');
+
+    const changeName = (event, newValue) => {
+        setName(newValue.code)
+        setAddress(newValue.street)
     };
     return (
         <div>
@@ -74,6 +82,7 @@ export default function Post() {
                             }}
                         />
                     )}
+                    onChange = {changeName}
                 />
             </div>
 
@@ -96,8 +105,8 @@ export default function Post() {
                 </FormControl>
             </div>
 
-            <Button variant="contained" style={{'float':'right', 'margin-right':'10px'}} component={Link} to='/confirm'>Create</Button>
-            
+            <Button variant="contained" style={{ 'float': 'right', 'margin-right': '10px' }} component={Link} to={`/confirm/${resname}/${resaddress}`}>Create</Button>
+
             <LowerFrame />
         </div >
     );
@@ -106,5 +115,5 @@ export default function Post() {
 const restaurants = [
     { code: 'Crab House All You Can Eat Seafood', distance: '3.3 mi', street: '135 E 55th St', city: 'New York' },
     { code: 'Shaking Crab', distance: '0.2 mi', street: '2869 Broadway', city: 'New York' },
-    { code: 'Crab Du Jour', distance: '2.9 mi', street: '8101 Tonnelle Ave, Ste 2', city: 'North Bergen'}
+    { code: 'Crab Du Jour', distance: '2.9 mi', street: '8101 Tonnelle Ave, Ste 2', city: 'North Bergen' }
 ]

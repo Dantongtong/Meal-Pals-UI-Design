@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import { InputNumber } from 'antd';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const cuisines = [
     {
@@ -35,6 +35,8 @@ const switchControl = {
 };
 
 export default function Confirm() {
+    const {resname, resaddress} = useParams();
+
     const banner = {
         'text-align': 'center',
         'background': '#FFFFFF',
@@ -57,16 +59,20 @@ export default function Confirm() {
 
             <div style={{ padding: '0 20px' }}>
                 <div style={inputTitle}>Restaurant Information</div>
-                <FormControl fullWidth sx={{ m: 1 }} variant="standard" style={{margin: '0 0 20px'}}>
+                <FormControl fullWidth sx={{ m: 1 }} variant="standard" style={{ margin: '0 0 20px' }}>
                     <InputLabel htmlFor="standard-adornment-amount">Name</InputLabel>
                     <Input
-                        id="standard-adornment-amount"
+                        type = "text"
+                        id="restaurant-name"
+                        value={resname}
                     />
                 </FormControl>
-                <FormControl fullWidth sx={{ m: 1 }} variant="standard" style={{margin: '0 0 20px'}}>
+                <FormControl fullWidth sx={{ m: 1 }} variant="standard" style={{ margin: '0 0 20px' }}>
                     <InputLabel htmlFor="standard-adornment-amount">Address</InputLabel>
                     <Input
-                        id="standard-adornment-amount"
+                        type = "text"
+                        id="restaurant-address"
+                        value={resaddress}
                     />
                 </FormControl>
                 <TextField
@@ -75,7 +81,7 @@ export default function Confirm() {
                     label="Type of Cuisine"
                     defaultValue="EUR"
                     variant="standard"
-                    style={{width: '350px'}}
+                    style={{ width: '350px' }}
                 >
                     {cuisines.map((option) => (
                         <MenuItem key={option.label} value={option.label}>
@@ -83,9 +89,13 @@ export default function Confirm() {
                         </MenuItem>
                     ))}
                 </TextField>
-                <div style={{margin:'20px 0'}}>
+                <div style={{ margin: '20px 0' }}>
                     <div>Price</div>
-                    <InputNumber min={1} max={10} defaultValue={3} />
+                    <InputNumber
+                        defaultValue={20}
+                        formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                        parser={value => value.replace(/\$\s?|(,*)/g, '')}
+                    />
                 </div>
 
                 <div style={switchControl}>

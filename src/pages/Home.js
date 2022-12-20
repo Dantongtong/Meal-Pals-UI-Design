@@ -9,20 +9,15 @@ import Select from '@mui/material/Select';
 import SearchIcon from '@mui/icons-material/Search';
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CardHeader from '@mui/material/CardHeader';
-import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 
 

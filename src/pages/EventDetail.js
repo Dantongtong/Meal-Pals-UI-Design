@@ -5,17 +5,31 @@ import { Link, useParams } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Stack from "@mui/material/Stack";
-import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import TextField from '@mui/material/TextField';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import IconButton from '@mui/material/IconButton';
-import StarIcon from '@mui/icons-material/Star';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import FaceIcon from '@mui/icons-material/Face';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Paper from '@mui/material/Paper';
+import Draggable from 'react-draggable';
+
+function PaperComponent(props) {
+    return (
+        <Draggable
+            handle="#draggable-dialog-title"
+            cancel={'[class*="MuiDialogContent-root"]'}
+        >
+            <Paper {...props} />
+        </Draggable>
+    );
+}
 
 
 export default function EventDetail() {
@@ -24,6 +38,16 @@ export default function EventDetail() {
     const leftInt = parseInt(left, 10)
 
     const [clicked, setClicked] = useState();
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     const Header = {
         'font-size': '18px',
@@ -124,9 +148,29 @@ export default function EventDetail() {
 
             </Stack>
 
-            <Button variant="contained" style={{ 'float': 'right', 'margin-right': '20px', 'margin-top': '5px' }}>Join Now</Button>
+            <Button variant="contained" style={{ 'float': 'right', 'margin-right': '20px', 'margin-top': '5px' }} onClick={handleClickOpen}>Join Now</Button>
 
-
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                PaperComponent={PaperComponent}
+                aria-labelledby="draggable-dialog-title"
+            >
+                <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
+                    Confirmation
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                    You will join Kiley at Shake Shack on Nov 19, 2022, 12:00 p.m. 
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button autoFocus onClick={handleClose}>
+                        No
+                    </Button>
+                    <Button onClick={handleClose} component={Link} to='/'>Yes</Button>
+                </DialogActions>
+            </Dialog>
         </div >
     );
 }

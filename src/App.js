@@ -24,7 +24,7 @@ export default function App() {
         <Route path="/post" element={<Post/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/create" element={<Create/>}/>
-        <Route path="/confirm" element={<Confirm/>}/>
+        <Route path="/confirm/:resname/:resaddress" element={<Confirm/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/editprofile" element={<EditProfile/>}/>
         <Route path="/interests" element={<Interests/>}/>
