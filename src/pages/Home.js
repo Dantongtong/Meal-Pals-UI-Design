@@ -16,6 +16,15 @@ import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import CardHeader from '@mui/material/CardHeader';
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
+
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea } from '@mui/material';
+
 
 const Image = styled('img')({
   width: '100px',
@@ -32,8 +41,8 @@ export default function Home() {
 
   return (
     <div>
-      <UpperFrame/>
-      
+      <UpperFrame />
+
       <div style={title}>
         <h2>Meal Pals</h2>
         <h3>join a meal with schoolmates!</h3>
@@ -95,55 +104,71 @@ export default function Home() {
 
 
       <Grid>
-        <SkeletonChildrenDemo />
+        <SkeletonChildrenDemo name="Eve" joined="2" left="1" location="Thai Market" time="Friday, Dec 9th, 12:00 p.m."/>
       </Grid>
       <Grid>
-        <SkeletonChildrenDemo />
+        <SkeletonChildrenDemo name="Kiley" joined="3" left="1" location="Serafina" time="Saturday, Dec 31th, 8:00"/>
       </Grid>
       <Grid>
-        <SkeletonChildrenDemo />
+        <SkeletonChildrenDemo name="Dantong" joined="1" left="3" location="Amity Hall Uptown" time="Thursday, Jan 5th, 7:30 p.m."/>
       </Grid>
 
-      <LowerFrame/>
+      <LowerFrame />
 
     </div>
 
   );
 }
 
-function SkeletonChildrenDemo() {
+function SkeletonChildrenDemo(props) {
+  const joinedInt = parseInt(props.joined, 10); 
+  const leftInt = parseInt(props.left, 10); 
+  const total = joinedInt + leftInt; 
+  const totalString = total.toString(); 
+  const subheader = props.joined + " joined / " + totalString + " total"; 
   return (
     <div style={{ margin: '10px', border: '1px #D4D4D5 solid', 'border-radius': '8px' }}>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <Box sx={{ margin: 1 }}>
-          <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
-        </Box>
-        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography>Eve</Typography>
-          <AvatarGroup max={4}>
-            <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
-            <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
-          </AvatarGroup>
-        </Box>
-      </Box>
-      <div style={{ width: '350px', height: '1px', background: '#D4D4D5', margin: '0 auto' }}></div>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <div style={{ position: 'relative' }}>
-          <IconButton color="primary" aria-label="add to favorite" style={{ position: 'absolute', right: '0px', color: 'white'}}>
-            <FavoriteBorderIcon />
-          </IconButton>
-          <Image
-            src="https://pi.tedcdn.com/r/talkstar-photos.s3.amazonaws.com/uploads/72bda89f-9bbf-4685-910a-2f151c4f3a8a/NicolaSturgeon_2019T-embed.jpg?w=512"
-            alt=""
-          />
-        </div>
+      <Card>
+        <CardHeader sx={{ maxHeight: 10 }}
+          avatar={
+            <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" 
+            sx={{ width: 30, height: 30 }}
+            />
+          }
+          action={
+            <AvatarGroup total={joinedInt}>
+              {Array.from({ length: joinedInt }, (_, i) =>
+                <span key={i}>
+                  <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" 
+                  sx={{ width: 30, height: 30 }}/>
+                </span>)}
+            </AvatarGroup>
+          }
+          title={props.name}
+          subheader= {subheader}
+        />
+        <CardActionArea component={Link} to={`/eventdetail/${props.name}/${props.location}/${props.time}/${props.joined}/${props.left}`}>
+          <CardContent sx={{ maxHeight: 100 }}>
+            <div style={{ width: '350px', height: '1px', background: '#D4D4D5', margin: '0 auto' }}></div>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+              <div style={{ position: 'relative' }}>
+                <IconButton color="primary" aria-label="add to favorite" style={{ position: 'absolute', right: '0px', color: 'white' }}>
+                  <FavoriteBorderIcon />
+                </IconButton>
+                <Image
+                  src="https://pi.tedcdn.com/r/talkstar-photos.s3.amazonaws.com/uploads/72bda89f-9bbf-4685-910a-2f151c4f3a8a/NicolaSturgeon_2019T-embed.jpg?w=512"
+                  alt=""                />
+              </div>
 
-        <ul style={{ 'list-style': 'none' }}>
-          <li>Thai Market</li>
-          <li>Friday, Dec 9th, 12:00 p.m.</li>
-          <li>960 Amsterdam Ave</li>
-        </ul>
-      </div>
+              <ul style={{'list-style': 'none', 'line-height':'2em'}}>
+                <li><b>{props.location}</b></li>
+                <li>{props.time}</li>
+                <li>960 Amsterdam Ave</li>
+              </ul>
+            </div>
+          </CardContent>
+        </CardActionArea>
+      </Card>
 
     </div>
   );
