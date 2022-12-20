@@ -10,11 +10,9 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import TextField from '@mui/material/TextField';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import IconButton from '@mui/material/IconButton';
-import Icon from '@mui/material/Icon';
-import StarOutlineIcon from '@mui/icons-material/StarOutline';
 
 export default function EventDetail() {
-    const { organizer, location } = useParams();
+    const { organizer, location, time, joined, left} = useParams();
 
     const Header = {
         'font-size': '18px',
@@ -22,7 +20,7 @@ export default function EventDetail() {
     };
 
     const description = {
-        color: '#6C6C6C', 
+        color: '#6C6C6C',
         'font-size': '17px',
         'line-height': '24px'
     };
@@ -49,6 +47,20 @@ export default function EventDetail() {
                 <Stack sx={{ mt: 2, fontWeight: 'bold' }}>
                     <div style={Header}>Time</div>
                 </Stack>
+                <div style={description}>{time}</div>
+                <Stack sx={{ mt: 2, fontWeight: 'bold' }}>
+                    <div style={Header}>Organizer</div>
+                </Stack>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box sx={{ margin: 1 }}>
+                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" 
+                        sx={{ width: 60, height: 60 }} />
+                    </Box>
+                    <Stack sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'left' }}>
+                        <div style={description}>{organizer}</div>
+                        <div style={description}>M.S. in Operations Research</div>
+                    </Stack>
+                </Box>
             </Stack>
 
         </div >

@@ -32,7 +32,7 @@ export default function App() {
         <Route path="/settings" element={<Settings/>}/>
         <Route path="/notifications" element={<Notifications/>}/>
         <Route path="/message/:user/:location" element={<Messages/>}/>
-        <Route path="/eventdetail/:organizer/:location" element={<EventDetail/>}/>
+        <Route path="/eventdetail/:organizer/:location/:time/:joined/:left" element={<EventDetail/>}/>
       </Routes>
     </Router>
   );
