@@ -21,3 +21,6 @@ react: 18.2.0
 npm install
 npm run start
 ```
+
+### Demo
+![Demonstration of the project](mealpals4.gif)
