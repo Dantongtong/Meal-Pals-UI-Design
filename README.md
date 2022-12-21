@@ -3,8 +3,9 @@
 This project was A design solution for users to discover, participate in, publish and organize meals with other CU students. 
 
 
-## React version
-react: 18.2.0  
+## Version
+react: 18.2.0
+Please look through the app under iphone 12 window.
 
 ## Team members
 | Name      | Uni |
