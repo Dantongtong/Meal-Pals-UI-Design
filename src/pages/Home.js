@@ -4,6 +4,7 @@ import UpperFrame from './UpperFrame';
 import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
 // import * as MenuItem from '@mui/material/MenuItem';
+import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import SearchIcon from '@mui/icons-material/Search';
@@ -19,6 +20,10 @@ import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
+import CardActions from '@mui/material/CardActions';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 
 const Image = styled('img')({
@@ -31,12 +36,30 @@ const Image = styled('img')({
 export default function Home() {
   const title = {
     'font-weight': '600',
-    padding: '0 20px'
+    'padding-top': '20px',
+    'padding-right': '30px',
+    'padding-bottom': '50px',
+    'padding-left': '30px',
+    // padding: '25px 50px 25px 10px',
+    color: "#F6F6F8",
+    position: "absolute",
+    top: 50,
   };
 
   return (
     <div>
       <UpperFrame />
+
+      <Card style={{
+        border: "none", boxShadow: "none", margin: 15, mb: 50,
+        'border-radius': '8px',
+        filter: 'brightness(0.7)'
+      }}>
+        <div style={{ position: "relative" }}>
+          <CardMedia style={{ height: "120px", opacity: 0.85 }} component="img" image={require('../images/header.jpg')} title="Header" alt="header image of fusion restaurant" />
+        </div>
+      </Card>
+
 
       <div style={title}>
         <h2>Meal Pals</h2>
@@ -118,7 +141,7 @@ function SkeletonChildrenDemo(props) {
   const totalString = total.toString();
   const subheader = props.joined + " joined / " + totalString + " total";
   return (
-    <div style={{ margin: '10px', border: '1px #D4D4D5 solid', 'border-radius': '4px' }}>
+    <div style={{ margin: '10px', border: '1px #D4D4D5 solid', 'borderRadius': '4px' }}>
       <Card>
         <CardHeader sx={{ maxHeight: 10 }}
           avatar={
@@ -151,7 +174,7 @@ function SkeletonChildrenDemo(props) {
                   alt="" />
               </div>
 
-              <div style={{ 'list-style': 'none', 'line-height': '2em', 'padding': '10px' }}>
+              <div style={{ 'list-style': 'none', 'padding': '10px' }}>
                 <div><b>{props.location}</b></div>
                 <div>{props.time}</div>
                 <div>960 Amsterdam Ave</div>
