@@ -1,10 +1,13 @@
 # Meal-Pals-UI-Design
 
-This project was A design solution for users to discover, participate in, publish and organize meals with other CU students. 
+This project was a design solution for users to discover, participate in, publish and organize meals with other CU students. 
 
 
 ## React version
 react: 18.2.0  
+
+## Implementation
+This project was created using React and the Material UI component library. 
 
 ## Team members
 | Name      | Uni |
