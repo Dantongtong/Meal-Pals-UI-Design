@@ -1,4 +1,5 @@
 import * as React from 'react';
+import UpperFrame from './UpperFrame';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -20,6 +21,7 @@ export default function EditProfile() {
 
     return (
         <div>
+            <UpperFrame />
             <Box sx={{ margin: 2, width: '100%', display: 'flex', alignItems: 'center' }}>
                 <Button startIcon={<ArrowBackIcon />} component={Link} to='/profile'>
                     Go Back
@@ -31,7 +33,7 @@ export default function EditProfile() {
             <Box sx={{ margin: 2, display: 'flex', justifyContent: "center", fontWeight: 'bold' }}>
                 <Stack>
                     <Avatar
-                        src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg"
+                        src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466"
                         sx={{ width: 100, height: 100 }}
                     />
                     <Button startIcon={<UploadIcon />}>

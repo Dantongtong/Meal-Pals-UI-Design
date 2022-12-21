@@ -15,6 +15,11 @@ Please look through the app under iphone 12 window.
 | Kiley Matschke   | km3496        |
 | Dantong Zhu   | dz2451        |
 
+## React version
+react: 18.2.0  
+
+## Implementation
+This project was created using React and the Material UI component library. 
 
 ### Usage
 
@@ -22,3 +27,5 @@ Please look through the app under iphone 12 window.
 npm install
 npm run start
 ```
+### Demo
+![Demonstration of the project](mealpals4.gif)

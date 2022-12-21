@@ -1,4 +1,5 @@
 import * as React from 'react';
+import UpperFrame from './UpperFrame';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
@@ -10,6 +11,7 @@ export default function DietaryRestrictions() {
 
     return (
         <div>
+            <UpperFrame />
             <Box sx={{ padding: 1, width: '100%', display: 'flex', alignItems: 'center' }}>
                 <Button startIcon={<ArrowBackIcon />} component={Link} to='/editprofile'>
                     Go Back

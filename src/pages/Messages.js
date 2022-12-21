@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
+import UpperFrame from './UpperFrame';
 import { Link, useParams } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -14,6 +15,7 @@ export default function Messages() {
 
     return (
         <div>
+            <UpperFrame />
             <Box sx={{ margin: 2, width: '100%', display: 'flex', alignItems: 'center' }}>
                 <Button  startIcon={<ArrowBackIcon />} component={Link} to='/notifications'>
                     Go Back
@@ -22,7 +24,7 @@ export default function Messages() {
             <Box sx={{display: 'flex', border: '1px #D4D4D5 solid', justifyContent: "center", fontWeight: 'bold' }}>
                 <Stack>
                     <Avatar
-                        src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg"
+                        src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466"
                     />
                     <Typography> {user} </Typography>
                 </Stack>

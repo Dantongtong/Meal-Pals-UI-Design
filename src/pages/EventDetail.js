@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from "react";
+import UpperFrame from './UpperFrame';
 import Button from '@mui/material/Button';
 import { Link, useParams } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -19,6 +20,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Paper from '@mui/material/Paper';
 import Draggable from 'react-draggable';
+import Card from '@mui/material/Card'; 
+import CardMedia from '@mui/material/CardMedia';
 
 function PaperComponent(props) {
     return (
@@ -73,8 +76,19 @@ export default function EventDetail() {
         'line-height': '24px'
     };
 
+    const title = {
+        'font-weight': '600',
+        'padding-top': '20px',
+        color: "#F6F6F8",
+        position: "absolute",
+        top: '65px',
+        left: '50%', 
+        'margin-left':'-35px', 
+    };
+
     return (
         <div>
+            <UpperFrame />
             <Stack sx={{ margin: 2, width: '90%', display: 'flex' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Button startIcon={<ArrowBackIcon />} component={Link} to='/'>
@@ -84,10 +98,22 @@ export default function EventDetail() {
                         {clicked ? <FavoriteIcon /> : <FavoriteBorderOutlinedIcon />}
                     </IconButton>
                 </Box>
-                <Stack sx={{ alignItems: 'center' }}>
-                    <h3>Event</h3>
-                </Stack>
-                <Stack sx={{ margin: 0, fontWeight: 'bold' }}>
+
+                <Card style={{
+                    border: "none", boxShadow: "none", margin: 2, mb: 50,
+                    'border-radius': '8px',
+                    filter: 'brightness(0.7)'
+                }}>
+                    <div style={{ position: "relative" }}>
+                        <CardMedia style={{ height: "120px", opacity: 0.85 }} component="img" image={require('../images/header.jpg')} title="Header" alt="header image of fusion restaurant" />
+                    </div>
+                </Card>
+
+                <div style={title}>
+                    <h2>Event</h2>
+                </div>
+
+                <Stack sx={{ mt: 1, fontWeight: 'bold' }}>
                     <div style={Header}>{location}</div>
                 </Stack>
                 <div style={description}>960 Amsterdam Avenue, New York</div>
@@ -101,7 +127,7 @@ export default function EventDetail() {
                 </Stack>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Box sx={{ margin: 1 }}>
-                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg"
+                        <Avatar src="https://img1.baidu.com/it/u=2885619241,1407342247&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200"
                             sx={{ width: 60, height: 60 }} />
                     </Box>
                     <Stack sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'left' }}>
@@ -117,7 +143,7 @@ export default function EventDetail() {
                     <AvatarGroup total={joinedInt}>
                         {Array.from({ length: joinedInt }, (_, i) =>
                             <span key={i}>
-                                <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                                <Avatar src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466" />
                             </span>)}
                     </AvatarGroup>
                     <AvatarGroup total={leftInt}>
@@ -161,7 +187,7 @@ export default function EventDetail() {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                    You will join Kiley at Shake Shack on Nov 19, 2022, 12:00 p.m. 
+                        You will join {organizer} at {location} on {time}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>

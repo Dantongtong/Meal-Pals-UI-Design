@@ -29,7 +29,7 @@ export default function Profile() {
 
             <Box sx={{ margin: 2, width: '100%', display: 'flex', alignItems: 'center' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', fontWeight: 'bold' }}>
-                    <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                    <Avatar src="https://img0.baidu.com/it/u=2715776483,47939737&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=466" />
                     <Stack sx={{ margin: 2, width: '100%', alignItems: 'left' }}>
                         <inputSubTitle2>  John Adams  </inputSubTitle2>
                         <Typography>Senior Student, CS Major</Typography>

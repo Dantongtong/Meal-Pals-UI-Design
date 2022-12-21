@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
+import UpperFrame from './UpperFrame';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -10,6 +11,7 @@ export default function Interests() {
 
     return (
         <div>
+            <UpperFrame />
             <Box sx={{ margin: 2, width: '100%', display: 'flex', alignItems: 'center' }}>
                 <Button startIcon={<ArrowBackIcon />} component={Link} to='/editprofile'>
                     Go Back
