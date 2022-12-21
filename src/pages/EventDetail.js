@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from "react";
+import UpperFrame from './UpperFrame';
 import Button from '@mui/material/Button';
 import { Link, useParams } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -89,6 +90,7 @@ export default function EventDetail() {
 
     return (
         <div>
+            <UpperFrame />
             <Stack sx={{ margin: 2, width: '90%', display: 'flex' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Button startIcon={<ArrowBackIcon />} component={Link} to='/'>

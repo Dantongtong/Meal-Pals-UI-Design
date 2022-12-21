@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
+import UpperFrame from './UpperFrame';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Stack from "@mui/material/Stack";
@@ -12,6 +13,7 @@ export default function Settings() {
 
     return (
         <div>
+            <UpperFrame />
             <Box sx={{ margin: 2, width: '100%', display: 'flex', alignItems: 'center' }}>
                 <Button startIcon={<ArrowBackIcon />} component={Link} to='/profile'>
                     Go Back
