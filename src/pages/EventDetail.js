@@ -19,6 +19,10 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Paper from '@mui/material/Paper';
 import Draggable from 'react-draggable';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { CardActionArea } from '@mui/material';
+import CardMedia from '@mui/material/CardMedia';
 
 function PaperComponent(props) {
     return (
@@ -73,6 +77,16 @@ export default function EventDetail() {
         'line-height': '24px'
     };
 
+    const title = {
+        'font-weight': '600',
+        'padding-top': '20px',
+        color: "#F6F6F8",
+        position: "absolute",
+        top: '65px',
+        left: '50%', 
+        'margin-left':'-35px', 
+    };
+
     return (
         <div>
             <Stack sx={{ margin: 2, width: '90%', display: 'flex' }}>
@@ -84,10 +98,22 @@ export default function EventDetail() {
                         {clicked ? <FavoriteIcon /> : <FavoriteBorderOutlinedIcon />}
                     </IconButton>
                 </Box>
-                <Stack sx={{ alignItems: 'center' }}>
-                    <h3>Event</h3>
-                </Stack>
-                <Stack sx={{ margin: 0, fontWeight: 'bold' }}>
+
+                <Card style={{
+                    border: "none", boxShadow: "none", margin: 2, mb: 50,
+                    'border-radius': '8px',
+                    filter: 'brightness(0.7)'
+                }}>
+                    <div style={{ position: "relative" }}>
+                        <CardMedia style={{ height: "120px", opacity: 0.85 }} component="img" image={require('../images/header.jpg')} title="Header" alt="header image of fusion restaurant" />
+                    </div>
+                </Card>
+
+                <div style={title}>
+                    <h2>Event</h2>
+                </div>
+
+                <Stack sx={{ mt: 1, fontWeight: 'bold' }}>
                     <div style={Header}>{location}</div>
                 </Stack>
                 <div style={description}>960 Amsterdam Avenue, New York</div>
@@ -161,7 +187,7 @@ export default function EventDetail() {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                    You will join {organizer} at {location} on {time}
+                        You will join {organizer} at {location} on {time}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
